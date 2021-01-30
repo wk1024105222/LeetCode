@@ -1,12 +1,10 @@
 package wkai.leetcode;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
-import java.util.Stack;
+import java.util.*;
 
 /**
- * leetcode37 解数独 V3.0版本
+ * leetcode37 解数独 V3.1版本
+ * 优化了mayBeList生成方式 取消默认1-9的方案 而是直接排除 关联点的值 但测试结果与3.0无差别
  * 采用回溯算法 按顺序 给每个节点从mayBeList找一个合适的值
  * 如果某个节点找不到合适的值，无路可走时 则退一步 上个节点换个值
  * 还不行再退一步 直到更换第一个点的值 重新走
@@ -65,11 +63,8 @@ class Solution37V3 {
 			for (int j = 0; j < 9; j++) {
 				if (arr[i][j] == '.') {
 					kongPoint.add(i * 9 + j);
-					LinkedList<Character> l = new LinkedList<Character>();
-					for (char t = '1'; t <= '9'; t++) {
-						l.add(t);
-					}
-					mayBeList.put(i * 9 + j, l);
+					LinkedList<Character> tmpList = initMaybeList(i,j,arr);
+					mayBeList.put(i * 9 + j, tmpList);
 				}
 			}
 		}
@@ -101,6 +96,39 @@ class Solution37V3 {
 			}
 		}
 		print(arr);
+	}
+
+	public LinkedList<Character> initMaybeList(int lineNo, int colNo,char[][] arr) {
+		LinkedList<Character> impossibleList = new LinkedList<Character>();
+		//遍历行、列关联点
+		for (int a = 0; a < 9; a++) {
+			char lv = arr[lineNo][a];
+			if (lv != '.') {
+				impossibleList.add(lv);
+			}
+			char cv = arr[a][colNo];
+			if (cv != '.') {
+				impossibleList.add(cv);
+			}
+		}
+		int line_b = lineNo / 3 * 3;
+		int line_e = line_b + 2;
+		int col_b = colNo / 3 * 3;
+		int col_e = col_b + 2;
+		for (int m = line_b; m <= line_e; m++) {
+			for (int n = col_b; n <= col_e; n++) {
+				if (arr[m][n] != '.') {
+					impossibleList.add(arr[m][n]);
+				}
+			}
+		}
+
+		LinkedList<Character> maybeList = new LinkedList<>();
+		for (char a = '1'; a <= '9'; a++) {
+			maybeList.add(a);
+		}
+		maybeList.removeAll(impossibleList);
+		return maybeList;
 	}
 
 	/**
