@@ -1,23 +1,15 @@
 package wkai.leetcode;
 
+import wkai.leetcode.util.ListNode;
+
 /**
  * leetcode25. K 个一组翻转链表
  */
 public class Solution25 {
     public static void main(String[] args) {
-        int[] a = new int[]{1,2,3,4,5};
-        ListNode head = new ListNode(a[0]);
-        ListNode tmp =head;
-        for(int i=1;i<a.length;i++){
-            tmp.next= new ListNode(a[i]);
-            tmp = tmp.next;
-        }
+        ListNode head = new ListNode(new int[]{1,2,3,4,5});
         ListNode b = new Solution25().reverseKGroup_1(head, 3);
-        while(b.next != null){
-            System.out.printf("%d ",b.val);
-            b=b.next;
-        }
-        System.out.printf("%d ",b.val);
+        System.out.println(b);
     }
 
     /**
@@ -91,12 +83,4 @@ public class Solution25 {
         }
         return kong.next;
     }
-}
-
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode() {}
-    ListNode(int val) { this.val = val; }
-    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 }

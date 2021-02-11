@@ -1,5 +1,7 @@
 package wkai.leetcode;
 
+import wkai.leetcode.util.ListNode;
+
 /**
  * leetcode21. 合并两个有序链表
  * 测试结果：通过
@@ -9,14 +11,6 @@ package wkai.leetcode;
 public class Solution21 {
     public static void main(String[] args) {
 //        System.out.println(new Solution21().mergeTwoLists(new int[][]{{2,3,4},{5,6,7},{8,9,10},{11,12,13},{14,15,16}}));
-    }
-
-    public class ListNode {
-        int val;
-        ListNode next;
-        ListNode() {}
-        ListNode(int val) { this.val = val; }
-        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
     }
 
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {

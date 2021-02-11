@@ -8,13 +8,13 @@ public class Solution9 {
         System.out.println(new Solution9().isPalindrome(-1));
     }
 
-  /**
-   * 不满足 不转String实现
-   * 执行用时：10 ms, 在所有 Java 提交中击败了78.08%的用户
-   * 内存消耗：38.2 MB, 在所有 Java 提交中击败了18.42%的用户
-   * @param x
-   * @return
-   */
+    /**
+    * 不满足 不转String实现
+    * 执行用时：10 ms, 在所有 Java 提交中击败了78.08%的用户
+    * 内存消耗：38.2 MB, 在所有 Java 提交中击败了18.42%的用户
+    * @param x
+    * @return
+    */
     public boolean isPalindrome_1(int x) {
         if(x<0){
             return false;
@@ -30,14 +30,14 @@ public class Solution9 {
         return rlt;
     }
 
-  /**
-   * 没有用String
-   * 执行用时： 12 ms , 在所有 Java 提交中击败了 34.80% 的用户
-   * 内存消耗： 38.1 MB , 在所有 Java 提交中击败了 19.26% 的用户
-   * @param x
-   * @return
-   */
-  public boolean isPalindrome(int x) {
+    /**
+    * 没有用String
+    * 执行用时： 12 ms , 在所有 Java 提交中击败了 34.80% 的用户
+    * 内存消耗： 38.1 MB , 在所有 Java 提交中击败了 19.26% 的用户
+    * @param x
+    * @return
+    */
+    public boolean isPalindrome(int x) {
         if(x<0){
           return false;
         }
