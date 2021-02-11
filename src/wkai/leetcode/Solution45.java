@@ -34,6 +34,7 @@ public class Solution45 {
             int max = -1;
             int index = -1;
             int j = -1;
+            // 寻找目标点后 步数j-i + nums[j]最大的点
             for(j=i+1;j<=i+nums[i];j++){
                 if(j-i+nums[j]>=max){
                     max = j-i+nums[j];
