@@ -1,7 +1,5 @@
 package wkai.leetcode;
 
-import java.util.ArrayList;
-
 /**
  * leetcode504. 七进制数
  * 测试结果：通过

@@ -1,7 +1,5 @@
 package wkai.leetcode;
 
-import java.util.*;
-
 /**
  * leetcode25. K 个一组翻转链表
  */

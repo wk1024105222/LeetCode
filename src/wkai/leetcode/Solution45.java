@@ -1,8 +1,5 @@
 package wkai.leetcode;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * leetcode45. 跳跃游戏 II
  */
